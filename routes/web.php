@@ -21,3 +21,6 @@ Route::get('/basics', [App\Http\Controllers\BasicController::class, 'index'])->n
 Route::get('/add', [App\Http\Controllers\BasicController::class, 'add'])->name('add');
 Route::post('/add', [App\Http\Controllers\BasicController::class, 'create'])->name('create');
 Route::post('/basics', [App\Http\Controllers\BasicController::class, 'index'])->name('basics');
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
