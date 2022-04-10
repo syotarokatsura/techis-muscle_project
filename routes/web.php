@@ -16,3 +16,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/basics', [App\Http\Controllers\BasicController::class, 'index'])->name('basics');
+Route::get('/add', [App\Http\Controllers\BasicController::class, 'add'])->name('add');
+Route::post('/add', [App\Http\Controllers\BasicController::class, 'create'])->name('create');
+Route::post('/basics', [App\Http\Controllers\BasicController::class, 'index'])->name('basics');
