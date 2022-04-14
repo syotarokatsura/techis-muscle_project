@@ -13,7 +13,7 @@ class CreateMusersTable extends Migration
      */
     public function up()
     {
-        Schema::connection('muser')->create('musers', function (Blueprint $table) {
+        Schema::create('musers', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
