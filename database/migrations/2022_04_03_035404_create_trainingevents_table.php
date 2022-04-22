@@ -20,6 +20,7 @@ class CreateTrainingeventsTable extends Migration
             $table->bigInteger('trainingname_id')->unsigned();
             $table->integer('weight')->nullable();
             $table->integer('numberoftime');
+            $table->timestamps();
         });
     }
 

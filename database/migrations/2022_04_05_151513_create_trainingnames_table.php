@@ -16,7 +16,7 @@ class CreateTrainingnamesTable extends Migration
         Schema::create('trainingnames', function (Blueprint $table) {
             $table->id();
             $table->string('muscletrainingname');
-            $table->bigInteger('trainingpart_id')->unsigned();
+            $table->timestamps();
         });
     }
 
