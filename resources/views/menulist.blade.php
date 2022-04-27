@@ -24,6 +24,7 @@
 
 <body>
 <div class="record">
+<h4>筋トレメニューリスト</h4>
         <div>
             <table class="table" border="1">
                 <tr>
@@ -33,16 +34,17 @@
                     <th>回数</th>
                     <th>kg</th>
                 </tr>
-                @foreach($trainingevent as $key => $value) 
+                @foreach($trainingevent as $key => $value) <!--データの数に合わせて表示。3つデータをとってくるなら、３つ表示する/回しているデータはAllだが、番号を指定（1.腕.腕立て）-->
                     <tr>
                         <td>{{$value->date}}</td>
                         <td>{{$value->trainingname_id}}</td>
                         <td>{{$muscletrainingnames[$key]}}</td>
                         <td>{{$value->numberoftime}}</td>
                         <td>{{$value->weight}}</td>
-                        <td><a  href="/muscleDelete/{{$value->id}}"><button type="button" class="btn btn-secondary">削除</button></a></td>
+                        <td><a  href="/menuDelete/{{$value->trainingname_id}}"><button type="button" class="btn btn-secondary">削除</button></a></td> 
                     </tr>
                 @endforeach
+            
             </table>
         </div>
 </div>
