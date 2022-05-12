@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TrainingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,3 +34,4 @@ Route::get('/menulist', [App\Http\Controllers\TestController::class, 'menulist']
 
 Route::get('/taisosei', [App\Http\Controllers\HealthController::class, 'taisosei']);
 Route::get('/menuDelete/{id}',[App\Http\Controllers\TestController::class,'menuDelete']);
+Route::get('/register', [App\Http\Controllers\TrainingController::class, 'register']);
