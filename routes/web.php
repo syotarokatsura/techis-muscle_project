@@ -20,18 +20,16 @@ Route::get('/', function () {
 
 Route::get('/basics', [App\Http\Controllers\BasicController::class, 'index'])->name('basics');
 Route::get('/add', [App\Http\Controllers\BasicController::class, 'add'])->name('add');
-Route::post('/add', [App\Http\Controllers\BasicController::class, 'create'])->name('create');
-Route::post('/basics', [App\Http\Controllers\BasicController::class, 'index'])->name('basics');
+Route::post('/add', [App\Http\Controllers\BasicController::class, 'create'])->name('create');//未完成
+Route::post('/basics', [App\Http\Controllers\BasicController::class, 'index'])->name('basics');//未完成
 Auth::routes();
-
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/menu', [App\Http\Controllers\TestController::class, 'index'])->name('menu'); 
-Route::post('/menuCreate', [App\Http\Controllers\TestController::class, 'menuCreate'])->name('menuCreate');
-Route::post('/musclecountRegister', [App\Http\Controllers\TestController::class, 'musclecountRegister'])->name('musclecountRegister'); 
-Route::get('/menulist', [App\Http\Controllers\TestController::class, 'menulist'])->name('menulist');
+Route::get('/menu', [App\Http\Controllers\TrainingController::class, 'index'])->name('menu');
+Route::post('/menuCreate', [App\Http\Controllers\TrainingController::class, 'menuCreate'])->name('menuCreate');
+Route::post('/musclecountRegister', [App\Http\Controllers\TrainingController::class, 'musclecountRegister'])->name('musclecountRegister');
+Route::get('/menulist', [App\Http\Controllers\TrainingController::class, 'menulist'])->name('menulist');
+Route::get('/menuDelete/{id}',[App\Http\Controllers\TrainingController::class,'menuDelete']);
 
 
 Route::get('/taisosei', [App\Http\Controllers\HealthController::class, 'taisosei']);
-Route::get('/menuDelete/{id}',[App\Http\Controllers\TestController::class,'menuDelete']);
-Route::get('/register', [App\Http\Controllers\TrainingController::class, 'register']);
