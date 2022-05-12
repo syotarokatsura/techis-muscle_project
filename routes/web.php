@@ -31,3 +31,5 @@ Route::post('/menuCreate', [App\Http\Controllers\TestController::class, 'menuCre
 Route::post('/musclecountRegister', [App\Http\Controllers\TestController::class, 'musclecountRegister'])->name('musclecountRegister'); 
 
 Route::get('/menulist', [App\Http\Controllers\TestController::class, 'menulist'])->name('menulist');
+
+Route::get('/taisosei', [App\Http\Controllers\HealthController::class, 'taisosei']);
