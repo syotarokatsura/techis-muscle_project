@@ -38,7 +38,7 @@ class TestController extends Controller
             $weight = $request->weight;
             $numberoftime = $request->numberoftime;/**5つのデータを受け取る */
 
-            $trainingnames = new Trainingname();
+            $trainingnames = new Trainingname(); /**Trainingnameモデルからnameをとる */
             $trainingnames->muscletrainingname = $trainingname;
             $trainingnames->save();
             
@@ -51,26 +51,39 @@ class TestController extends Controller
             $trainingevents->numberoftime = $numberoftime;
             $trainingevents->save();
 
-            return redirect('menulist');
+            return redirect('menulist'); //一度区切ってredirectでmenulistのみひらく
         }
 
         public function menulist(Request $request)
         {
             // 存在するデータの数だけ取得する
             $trainingevent = Trainingevent::get();
+            
 
-            // Trainingeventのデータをひとつずつ処理する
+            // Trainingeventのデータをひとつずつ処理する.これをしないと上書き保存になる(最後のデータだけを残す）。
             $muscletrainingnames = [];// 配列を宣言する
             foreach($trainingevent as $value){
                 $trainingname_id = $value->trainingname_id;
                 $trainingnames = Trainingname::where('id', '=', $trainingname_id)->first();
                 $muscletrainingnames[] = $trainingnames->muscletrainingname;
             }
-
+            
             return view('menulist')->with([
                 'trainingevent' => $trainingevent,
                 'muscletrainingnames' => $muscletrainingnames,
             ]);
+        }
+
+        public function menuDelete(Request $request){
+            //紐づくidとtrainingname_idを削除
+            $trainingevents = Trainingevent::where('trainingname_id','=', $request->id)->first();
+            $trainingevents -> delete();
+
+            $trainingname = Trainingname::where('id','=', $request->id)->first();
+            $trainingname -> delete();
+
+            return redirect('menulist');
+
         }
 
 

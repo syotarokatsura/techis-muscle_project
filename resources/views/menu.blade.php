@@ -36,7 +36,7 @@
         </select>
         <div class="form-group">
             <input class="form-control" type="text" name="trainingname" placeholder="筋トレ名">
-            <button type="submit" class="btn btn-secondary">登録</button><!-- count.blade.phpへ飛ぶ  <a></a>?-->
+            <button type="submit" class="btn btn-secondary">登録</button><!-- count.blade.phpへ飛ぶ  -->
         </div>
     </form>
 </div>
