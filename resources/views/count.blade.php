@@ -16,7 +16,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    
+
     <!-- 独自のCSSを反映する publicの中のcssをもってくる-->
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
@@ -26,6 +26,8 @@
 <div class="count">
 <h4>トレーニング結果</h4>
         <form action="/musclecountRegister" method="post">
+{{--            <input class="form-control" type="text" name="trainingparts" value={{$trainingpartsRecest}}>--}}
+{{--            <input class="form-control" type="text" name="trainingname" value={{$trainingname}}>--}}
         @csrf <!-- データ保護 419error-->
             <tr>
                 <th>日付</th>
@@ -36,9 +38,13 @@
             </tr>
                 <tr>
                     <td><div class="input-group mb-3"><input class="form-control" type="date" name="date" max="{{date('Y-m-d')}}"></div></td>
-                    <!-- <td><div class="input-group mb-3"><input class="form-control" type="number" name="trainingparts" value={{$trainingparts}}></div></td> -->
-                    <td><div class="input-group mb-3"><input class="form-control" type="text" name="trainingparts" value={{$trainingpartstext}}></div></td>
-                    <td><div class="input-group mb-3"><input class="form-control" type="text" name="trainingname" value={{$trainingname}}></div></td>
+                    <select class="form-select" aria-label="Default select example" name='trainingparts'>
+                        <option selected>筋トレ部位の選択</option>
+                        @foreach($trainingparts as $value)
+                            <option value="{{$value->id}}">{{$value->name}}</option>
+                        @endforeach
+                    </select>
+                    <td><div class="input-group mb-3"><input class="form-control" type="text" name="trainingname" placeholder="トレーニング名"></div></td>
                     <td><div class="input-group mb-3"><input class="form-control" type="number" name="numberoftime" placeholder="回数"></div></td>
                     <td><div class="input-group mb-3"><input class="form-control" type="number" name="weight" placeholder="重さkg入力"></div></td>
                     <button type="submit" class="btn btn-secondary">登録</button><!--record.balde.phpに-->

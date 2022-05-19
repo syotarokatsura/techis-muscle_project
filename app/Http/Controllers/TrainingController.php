@@ -5,64 +5,21 @@ namespace App\Http\Controllers;
 
 use App\Models\Trainingevent;
 use App\Models\Trainingname;
+use App\Models\Trainingpart;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 
 class TrainingController extends Controller
 {
-    /**
-     * 基礎データ一覧表示
-     *
-     * @param Request $request
-     * @return Response
-     */
-    public function index(Request $request)
-    {
-        return view('menu');
-    }
-
-    public function menuCreate(Request $request)
-    {
-        // dd('menu');
-        // $trainingparts = $request->trainingparts;
-        // $trainingname = $request->trainingname; /**二つのデータを受け取る */
-        return view('menu')->with([
-            // 'trainingparts'=>$trainingparts,
-            // 'trainingname'=>$trainingname /**画面に一緒にデータを渡してあげる */
-        ]);
-    }
-
     public function menuCreatePost(Request $request)
     {
-        // dd($request);
-        $trainingparts_text = '初期値';
+        $trainingparts = Trainingpart::all();
 
-        $trainingparts = $request->trainingparts;
-        if ( $trainingparts == 1 ){
-            $trainingparts_text = '腕';
-        }elseif ($trainingparts == 2 ) {
-            $trainingparts_text = '背中';
-        }elseif ($trainingparts == 3 ) {
-            $trainingparts_text = '胸';
-        }elseif ($trainingparts == 4 ) {
-            $trainingparts_text = '肩';
-        }elseif ($trainingparts == 5 ) {
-            $trainingparts_text = 'お腹';
-        }elseif ($trainingparts == 6 ) {
-            $trainingparts_text = '太もも';
-        }elseif ($trainingparts == 7 ) {
-            $trainingparts_text = 'ふくらはぎ';
-        }
-
-        $trainingname = $request->trainingname; /**二つのデータを受け取る */
         return view('count')->with([
-            'trainingpartstext'=>$trainingparts_text,
             'trainingparts'=>$trainingparts,
-            'trainingname'=>$trainingname /**画面に一緒にデータを渡してあげる */
         ]);
     }
-
-
+    
     public function musclecountRegister(Request $request)
     {
         $user_id = 1;//仮

@@ -16,7 +16,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    
+
     <!-- 独自のCSSを反映する publicの中のcssをもってくる-->
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
@@ -30,13 +30,9 @@
         @csrf <!-- データ保護 419error-->
         <select class="form-select" aria-label="Default select example" name='trainingparts'>
             <option selected>筋トレ部位の選択</option>
-            <option value="1">腕</option>
-            <option value="2">背中</option>
-            <option value="3">胸</option>
-            <option value="4">肩</option>
-            <option value="5">お腹</option>
-            <option value="6">太もも</option>
-            <option value="7">ふくらはぎ</option>
+            @foreach($trainingparts as $value)
+                <option value="{{$value->id}}">{{$value->name}}</option>
+            @endforeach
         </select>
         <div class="form-group">
             <input class="form-control" type="text" name="trainingname" placeholder="筋トレ名">
