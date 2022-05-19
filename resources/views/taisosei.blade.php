@@ -15,47 +15,60 @@
 <body>
     <!-- 体組成データ -->
 
-<table border='1'>
-<tr>
-    <th>体重</th>
-    <td><input type="text"></td>
-    <td>kg</td>
-</tr>
-<tr>
-    <th>BMI</th>
-    <td><input type="text"></td>
-</tr>
-<tr>
-    <th>体脂肪率</th>
-    <td><input type="text"></td>
-    <td>%</td>
-</tr>
-<tr>
-    <th>胸囲</th>
-    <td><input type="text"></td>
-    <td>cm</td>
-</tr>
-<tr>
-    <th>腕周り</th>
-    <td><input type="text"></td>
-    <td>cm</td>
-</tr>
-<tr>
-    <th>ウエスト</th>
-    <td><input type="text"></td>
-    <td>cm</td>
-</tr>
-<tr>
-    <th>大腿筋</th>
-    <td><input type="text"></td>
-    <td>cm</td>
-</tr>
-<tr>
-    <th>ヒップ</th>
-    <td><input type="text"></td>
-    <td>cm</td>
-</tr>
-</table>
+<form action="{{ url('/taisosei')" method="POST">
+
+    <table border='1'>
+    <tr>
+        <th>体重</th>
+        <td><input type="number"></td>
+        <td>kg</td>
+        <td><button class="btn" type="submit">登録</button></td>
+    </tr>
+    <tr>
+        <th>BMI</th>
+        <td><input type="number"></td>
+        <td></td>
+        <td><button class="btn" type="submit">登録</button></td>
+    </tr>
+    <tr>
+        <th>体脂肪率</th>
+        <td><input type="number"></td>
+        <td>%</td>
+        <td><button class="btn" type="submit">登録</button></td>
+    </tr>
+    <tr>
+        <th>胸囲</th>
+        <td><input type="number"></td>
+        <td>cm</td>
+        <td><button class="btn" type="submit">登録</button></td>
+    </tr>
+    <tr>
+        <th>腕周り</th>
+        <td><input type="number"></td>
+        <td>cm</td>
+        <td><button class="btn" type="submit">登録</button></td>
+    </tr>
+    <tr>
+        <th>ウエスト</th>
+        <td><input type="number"></td>
+        <td>cm</td>
+        <td><button class="btn" type="submit">登録</button></td>
+    </tr>
+    <tr>
+        <th>大腿筋</th>
+        <td><input type="number"></td>
+        <td>cm</td>
+        <td><button class="btn" type="submit">登録</button></td>
+    </tr>
+    <tr>
+        <th>ヒップ</th>
+        <td><input type="number"></td>
+        <td>cm</td>
+        <td><button class="btn" type="submit">登録</button></td>
+    </tr>
+    </table>
+
+</form>
 
 </body>
 </html>
