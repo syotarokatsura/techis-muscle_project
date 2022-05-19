@@ -23,13 +23,45 @@ class TrainingController extends Controller
 
     public function menuCreate(Request $request)
     {
+        // dd('menu');
+        // $trainingparts = $request->trainingparts;
+        // $trainingname = $request->trainingname; /**二つのデータを受け取る */
+        return view('menu')->with([
+            // 'trainingparts'=>$trainingparts,
+            // 'trainingname'=>$trainingname /**画面に一緒にデータを渡してあげる */
+        ]);
+    }
+
+    public function menuCreatePost(Request $request)
+    {
+        // dd($request);
+        $trainingparts_text = '初期値';
+
         $trainingparts = $request->trainingparts;
+        if ( $trainingparts == 1 ){
+            $trainingparts_text = '腕';
+        }elseif ($trainingparts == 2 ) {
+            $trainingparts_text = '背中';
+        }elseif ($trainingparts == 3 ) {
+            $trainingparts_text = '胸';
+        }elseif ($trainingparts == 4 ) {
+            $trainingparts_text = '肩';
+        }elseif ($trainingparts == 5 ) {
+            $trainingparts_text = 'お腹';
+        }elseif ($trainingparts == 6 ) {
+            $trainingparts_text = '太もも';
+        }elseif ($trainingparts == 7 ) {
+            $trainingparts_text = 'ふくらはぎ';
+        }
+
         $trainingname = $request->trainingname; /**二つのデータを受け取る */
         return view('count')->with([
+            'trainingpartstext'=>$trainingparts_text,
             'trainingparts'=>$trainingparts,
             'trainingname'=>$trainingname /**画面に一緒にデータを渡してあげる */
         ]);
     }
+
 
     public function musclecountRegister(Request $request)
     {
@@ -88,3 +120,4 @@ class TrainingController extends Controller
 
     }
 }
+

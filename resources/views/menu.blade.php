@@ -33,6 +33,10 @@
             <option value="1">腕</option>
             <option value="2">背中</option>
             <option value="3">胸</option>
+            <option value="4">肩</option>
+            <option value="5">お腹</option>
+            <option value="6">太もも</option>
+            <option value="7">ふくらはぎ</option>
         </select>
         <div class="form-group">
             <input class="form-control" type="text" name="trainingname" placeholder="筋トレ名">
