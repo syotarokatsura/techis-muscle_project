@@ -24,7 +24,7 @@
 
 <body>
 <div class="count">
-<h4>回数・kg登録</h4>
+<h4>トレーニング結果</h4>
         <form action="/musclecountRegister" method="post">
         @csrf <!-- データ保護 419error-->
             <tr>
@@ -35,8 +35,9 @@
                 <th>kg</th>
             </tr>
                 <tr>
-                    <td><div class="input-group mb-3"><input class="form-control" type="date" name="date"></div></td>
-                    <td><div class="input-group mb-3"><input class="form-control" type="number" name="trainingparts" value={{$trainingparts}}></div></td>
+                    <td><div class="input-group mb-3"><input class="form-control" type="date" name="date" max="{{date('Y-m-d')}}"></div></td>
+                    <!-- <td><div class="input-group mb-3"><input class="form-control" type="number" name="trainingparts" value={{$trainingparts}}></div></td> -->
+                    <td><div class="input-group mb-3"><input class="form-control" type="text" name="trainingparts" value={{$trainingpartstext}}></div></td>
                     <td><div class="input-group mb-3"><input class="form-control" type="text" name="trainingname" value={{$trainingname}}></div></td>
                     <td><div class="input-group mb-3"><input class="form-control" type="number" name="numberoftime" placeholder="回数"></div></td>
                     <td><div class="input-group mb-3"><input class="form-control" type="number" name="weight" placeholder="重さkg入力"></div></td>
