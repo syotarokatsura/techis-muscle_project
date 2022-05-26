@@ -34,6 +34,7 @@ class HealthController extends Controller
         $Health->waist = $request->get('waist');
         $Health->thign = $request->get('thign');
         $Health->hip = $request->get('hip');
+        $Health->measurement_date = $request->get('date');
 
         $Health->save();
 

@@ -61,6 +61,7 @@
             <td>cm</td>
         </tr>
         <tr>
+            <th>日付</th>
             <td><div class="input-group mb-3"><input class="form-control" type="date" name="date"></div></td>
         </tr>
         </table>
