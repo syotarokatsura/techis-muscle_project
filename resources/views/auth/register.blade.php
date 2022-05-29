@@ -12,7 +12,7 @@
                         @csrf
 
                         <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
+                            <label for="name" class="col-md-4 col-form-label text-md-right">名前</label>
 
                             <div class="col-md-6">
                                 <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
@@ -26,7 +26,36 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+                            <label for="gender" class="col-md-4 col-form-label text-md-right">性別</label>
+                            <div class="col-md-6">
+                                <select class="form-control" id='gender' name='gender' value="{{old('gender')}}" required autocomplete="gender"autofocus>
+                                <option value="1">Male</option> <option value="2">Female</option> <option value="3">Other</option></select>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="age" class="col-md-4 col-form-label text-md-right">年齢</label>
+                            <div class="col-md-6">
+                                <input id="age" type="number" class="form-control" name="age" value="{{ old('age') }}" required autocomplete="age"autofocus>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="height" class="col-md-4 col-form-label text-md-right">身長</label>
+                            <div class="col-md-6">
+                                <input id="height" type="number" class="form-control" name="height" value="{{ old('height') }}" required autocomplete="height"autofocus>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="weight" class="col-md-4 col-form-label text-md-right">体重</label>
+                            <div class="col-md-6">
+                                <input id="weight" type="number" class="form-control" name="weight" value="{{ old('weight') }}" required autocomplete="weight"autofocus>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="email" class="col-md-4 col-form-label text-md-right">メールアドレス</label>
 
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">

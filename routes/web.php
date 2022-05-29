@@ -22,7 +22,9 @@ Route::get('/basics', [App\Http\Controllers\BasicController::class, 'index'])->n
 Route::get('/add', [App\Http\Controllers\BasicController::class, 'add'])->name('add');
 Route::post('/add', [App\Http\Controllers\BasicController::class, 'create'])->name('create');//未完成
 Route::post('/basics', [App\Http\Controllers\BasicController::class, 'index'])->name('basics');//未完成
+
 Auth::routes();
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/menuCreate', [App\Http\Controllers\TrainingController::class, 'menuCreatePost'])->name('menuCreate');

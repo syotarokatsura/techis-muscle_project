@@ -8,6 +8,7 @@ use App\Models\Trainingname;
 use App\Models\Trainingpart;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class TrainingController extends Controller
 {
@@ -23,7 +24,6 @@ class TrainingController extends Controller
     public function musclecountRegister(Request $request)
     {
         $user_id = 1;//仮
-
         $date = $request->date;
         $trainingparts = $request->trainingparts;
         $trainingname = $request->trainingname;
