@@ -8,4 +8,18 @@ use Illuminate\Database\Eloquent\Model;
 class Health extends Model
 {
     use HasFactory;
+
+    // protected $fillable = 
+    // [
+    //     'user_id',
+    //     'weight',
+    //     'bmi',
+    //     'bfp',
+    //     'chest',
+    //     'arm',
+    //     'waist',
+    //     'thign',
+    //     'hip'
+    // ];
+
 }

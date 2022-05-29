@@ -33,4 +33,5 @@ Route::get('/menulist', [App\Http\Controllers\TrainingController::class, 'menuli
 Route::get('/menuDelete/{id}',[App\Http\Controllers\TrainingController::class,'menuDelete']);
 
 
-Route::get('/taisosei', [App\Http\Controllers\HealthController::class, 'taisosei']);
+Route::get('/taisosei', [App\Http\Controllers\HealthController::class, 'taisosei'])->name('taisosei');
+Route::post('/taisosei', [App\Http\Controllers\HealthController::class, 'create']);
