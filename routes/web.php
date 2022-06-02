@@ -29,4 +29,5 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/menuDelete/{id}',[App\Http\Controllers\TrainingController::class,'menuDelete']);
     Route::get('/taisosei', [App\Http\Controllers\HealthController::class, 'taisosei'])->name('taisosei');
     Route::post('/taisosei', [App\Http\Controllers\HealthController::class, 'create']);
+    Route::get('/chart', [App\Http\Controllers\ChartController::class, 'index'])->name('chart');
 });
