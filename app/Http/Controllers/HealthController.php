@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Health;
+use Illuminate\Support\Facades\Auth;
 
 class HealthController extends Controller
 {
@@ -25,7 +26,7 @@ class HealthController extends Controller
 
         $Health = new Health();
 
-        $Health->user_id = 1;
+        $Health->user_id = Auth::id();
         $Health->weight = $request->input('weight');
         $Health->bmi = 30;
         $Health->bfp = $request->get('bfp');
