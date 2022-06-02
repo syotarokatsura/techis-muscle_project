@@ -1,21 +1,37 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
+    <div class="py-5 text-center">
+        <img class="d-block mx-auto mb-4" src=".svg" alt="" width="72" height="57">
+        <h2>筋トレアプリ</h2>
+        <p class="lead">ようこそ筋トレアプリへ。いろいろやってみよう。</p>
+    </div>
 
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
+<div class="b-example-divider"></div>
 
-                    {{ __('You are logged in!') }}
-                </div>
+    <div class="container px-4 py-5" id="hanging-icons">
+        <h2 class="pb-2 border-bottom">アプリメニュー</h2>
+        <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+        
+        <div class="col d-flex align-items-start">
+            <div class="icon-square bg-light text-dark flex-shrink-0 me-3">
+                <svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"/></svg>
+            </div>
+            <div>
+                <h2>Data</h2>
+                <p> みる</p>
+                <a href="/taisosei" class="btn btn-primary">Push</a>
+            </div>
+        </div>
+
+        <div class="col d-flex align-items-start">
+            <div class="icon-square bg-light text-dark flex-shrink-0 me-3">
+                <svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"/></svg>
+            </div>
+            <div>
+                <h2>Result</h2>
+                <p>トレーニング結果をみる</p>
+                <a href="/menu" class="btn btn-primary">Push</a>
             </div>
         </div>
     </div>

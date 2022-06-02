@@ -25,6 +25,7 @@ class PeopleHealthsData extends Migration
             $table->float('waist')->nullable()->comment("ウェスト_NULLを許容");
             $table->float('thign')->nullable()->comment("大腿筋_NULLを許容");
             $table->float('hip')->nullable()->comment("ヒップ_NULLを許容");
+            $table->dateTime('measurement_date')->comment("計測日");
             $table->timestamps();
         });
     }
