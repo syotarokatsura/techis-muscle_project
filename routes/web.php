@@ -24,7 +24,7 @@ Route::post('/add', [App\Http\Controllers\BasicController::class, 'create'])->na
 Route::post('/basics', [App\Http\Controllers\BasicController::class, 'index'])->name('basics');//未完成
 
 Auth::routes();
-
+Route::get('/chart', [App\Http\Controllers\ChartController::class, 'index'])->name('chart');
 
 //Route::get('profile', [UserController::class, 'show'])->middleware('auth');
 Route::group(['middleware' => 'auth'], function () {
@@ -35,4 +35,5 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/menuDelete/{id}',[App\Http\Controllers\TrainingController::class,'menuDelete']);
     Route::get('/taisosei', [App\Http\Controllers\HealthController::class, 'taisosei'])->name('taisosei');
     Route::post('/taisosei', [App\Http\Controllers\HealthController::class, 'create']);
+    //Route::get('/chart', [App\Http\Controllers\ChartController::class, 'index'])->name('chart');
 });
