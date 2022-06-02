@@ -65,7 +65,7 @@
                 <div>
                     <h2>Chart</h2>
                     <p>グラフを見る</p>
-                    <a href="/taisosei" class="btn btn-primary">Push</a>
+                    <a href="/chart" class="btn btn-primary">Push</a>
                 </div>
             </div>
 
