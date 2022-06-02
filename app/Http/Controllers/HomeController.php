@@ -27,4 +27,13 @@ class HomeController extends Controller
         return view('home');
     }
 
+    public function user(Request $request)
+    {
+        $users = User::all();
+
+        return view('menu')->with([
+            'users'=>$users,
+        ]);
+    }
+
 }

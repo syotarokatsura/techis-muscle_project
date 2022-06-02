@@ -23,7 +23,7 @@ class TrainingController extends Controller
     
     public function musclecountRegister(Request $request)
     {
-        $user_id = 1;//仮
+        //$user_id = 1;
         $date = $request->date;
         $trainingparts = $request->trainingparts;
         $trainingname = $request->trainingname;
@@ -35,14 +35,15 @@ class TrainingController extends Controller
         $trainingnames->save();
 
         $trainingevents = new Trainingevent();
-        $trainingevents->user_id =$user_id;
+        //$trainingevents->user_id =$user_id;
+        $trainingevents->user_id = Auth::id();
         $trainingevents->date = $date;
         $trainingevents->trainingname_id = $trainingnames->id;
         $trainingevents->weight = $weight;
         $trainingevents->numberoftime = $numberoftime;
         $trainingevents->save();
 
-        return redirect('menulist'); //一度区切ってredirectでmenulistのみひらく
+        return redirect('menu'); //一度区切ってredirectでmenulistのみひらく
     }
 
     public function menulist(Request $request)

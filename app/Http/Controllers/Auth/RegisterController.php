@@ -68,9 +68,9 @@ class RegisterController extends Controller
     {
         $user= User::create([
             'name' => $data['name'],
-            'gender' => $data['gender'],
-            'age' => $data['age'],
-            'height' => $data['height'],
+            //'gender' => $data['gender'],
+            //'age' => $data['age'],
+            //'height' => $data['height'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
@@ -80,6 +80,11 @@ class RegisterController extends Controller
         $healths->user_id = $user['id'];
         $healths->weight = $data['weight'];
         $healths->bmi = 22; //仮データ
+        //$healths->measurement_date = $data['measurement_date'];
+        //$hizuke = new DateTime();
+        //$date   = $hizuke->format('Y-m-d H:i:s');
+        $healths->measurement_date = '2022-06-01 12:00:00';//2022-06-01 12:00:00仮で入れてみる現在時刻入れる。
+
         $healths->save();
 
         $basics = new Basic(); 

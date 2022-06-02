@@ -31,7 +31,7 @@
             <div>
                 <h2>Result</h2>
                 <p>トレーニング結果をみる</p>
-                <a href="/menulist" class="btn btn-primary">Push</a>
+                <a href="/menu" class="btn btn-primary">Push</a>
             </div>
         </div>
     </div>
