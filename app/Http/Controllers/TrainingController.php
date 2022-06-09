@@ -37,6 +37,7 @@ class TrainingController extends Controller
         $trainingevents = new Trainingevent();
         $trainingevents->user_id =$user_id;
         $trainingevents->date = $date;
+        $trainingevents->parts_id = 1;
         $trainingevents->trainingname_id = $trainingnames->id;
         $trainingevents->weight = $weight;
         $trainingevents->numberoftime = $numberoftime;
@@ -49,8 +50,8 @@ class TrainingController extends Controller
     {
         // 存在するデータの数だけ取得する
         $trainingevent = Trainingevent::get();
-
-
+     
+        
         // Trainingeventのデータをひとつずつ処理する.これをしないと上書き保存になる(最後のデータだけを残す）。
         $muscletrainingnames = [];// 配列を宣言する
         foreach($trainingevent as $value){

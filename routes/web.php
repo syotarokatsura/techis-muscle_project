@@ -28,6 +28,7 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/menuCreate', [App\Http\Controllers\TrainingController::class, 'menuCreatePost'])->name('menuCreate');
+Route::get('/musclecountRegister', [App\Http\Controllers\TrainingController::class, 'musclecountRegister'])->name('musclecountRegister');
 Route::post('/musclecountRegister', [App\Http\Controllers\TrainingController::class, 'musclecountRegister'])->name('musclecountRegister');
 Route::get('/menulist', [App\Http\Controllers\TrainingController::class, 'menulist'])->name('menulist');
 Route::get('/menuDelete/{id}',[App\Http\Controllers\TrainingController::class,'menuDelete']);

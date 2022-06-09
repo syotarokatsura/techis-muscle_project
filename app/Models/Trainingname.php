@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Trainingname extends Model
 {
     use HasFactory;
+
+    protected $fillable = 
+    [
+   'muscletrainingname'
+    ];
+
 }
