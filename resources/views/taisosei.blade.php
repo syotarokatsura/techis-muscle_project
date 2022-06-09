@@ -7,7 +7,7 @@
     <title>Document</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    
+
     <!-- CSRF Token security?-->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
@@ -24,11 +24,6 @@
             <th>体重</th>
             <td><input type="number" name="weight"></td>
             <td>kg</td>
-        </tr>
-        <tr>
-            <th>BMI</th>
-            <td><input type="number" name="bmi"></td>
-            <td></td>
         </tr>
         <tr>
             <th>体脂肪率</th>
@@ -65,7 +60,7 @@
             <td><div class="input-group mb-3"><input class="form-control" type="date" name="date"></div></td>
         </tr>
         </table>
-            <td><button class="btn" type="submit">登録</button></td> 
+            <td><button class="btn" type="submit">登録</button></td>
 
     </form>
 </body>

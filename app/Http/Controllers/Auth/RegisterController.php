@@ -7,6 +7,7 @@ use App\Models\Basic;
 use App\Models\Health;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
+use App\Services\Service;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -68,31 +69,30 @@ class RegisterController extends Controller
     {
         $user= User::create([
             'name' => $data['name'],
-            'gender' => $data['gender'],
-            'age' => $data['age'],
-            'height' => $data['height'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
-        
 
         $healths = new Health(); //Healthモデルから取得
         $healths->user_id = $user['id'];
         $healths->weight = $data['weight'];
-        $healths->bmi = 22; //仮データ
+
+        $service = new Service();
+        //BMI計算
+        $bmi = $service->bmi($data['weight'], $data['height']);
+        $healths->bmi = $bmi;
+
+        $healths->measurement_date = now();
         $healths->save();
 
-        $basics = new Basic(); 
+        $basics = new Basic();
         $basics->user_id = $user['id'];
         $basics->name = $data['name'];
         $basics->gender = $data['gender'];
         $basics->age = $data['age'];
         $basics->height = $data['height'];
-        $basics->save(); 
+        $basics->save();
 
         return $user;
-
-
-
     }
 }
