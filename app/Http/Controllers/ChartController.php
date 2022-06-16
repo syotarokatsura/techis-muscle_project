@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Health;
+use Illuminate\Support\Facades\Auth;
 
 class ChartController extends Controller
 
@@ -12,11 +14,21 @@ class ChartController extends Controller
     {
         // ソート済みの配列を返す
 
-        $data = [70,69,67,66,68,68,66,65,67,65];
+        $data = Health::where('user_id', '=', Auth::id())->orderBy('measurement_date','asc')->get(); 
+        
+        $weight = [];
+        $measurement_date = [];
+        foreach ($data as $item) {
+            $weight[] = $item['weight'];
+            $measurement_date[] = $item['measurement_date'];
+
+        }
 
         $data=json_encode($data);
         return view('chart')->with([
-            'data' => $data]);
+            'weight' => $weight,
+            'measurement_date' => $measurement_date
+        ]);
     }
 
 }

@@ -23,23 +23,8 @@
 
         <script>
             //ラベル
-            var labels = 
-            [
-                "2022年1月",
-                "2022年2月",
-                "2022年3月",
-                "2022年4月",
-                "2022年5月",
-                "2022年6月",
-                "2022年7月",
-                "2022年8月",
-                "2022年9月",
-                "2022年10月",
-            ];
-            //体重データ
-            //var weight = [70,69,67,66,68,68,66,65,67,65]
-            let weight = JSON.parse("<?php echo $data ?>");
-            console.log(weight)
+            var labels = @json($measurement_date);
+            var weight = @json($weight);
 
             //グラフを描画
             var ctx = document.getElementById("line-Chart");
